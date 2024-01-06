@@ -2,10 +2,31 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Index.module.css'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [monthly, setMonthly] = useState(true);
+  const [basic, setBasic] = useState(19.99);
+  const [professional, setProfessional] = useState(24.99);
+  const [master, setMaster] = useState(39.99);
+
+  function checkAnnually(){
+    setMonthly(monthly=>!monthly);
+
+    if(monthly){
+      setBasic(basic=> 19.99);
+      setProfessional(professional=> 24.99);
+      setMaster(master=> 39.99);
+    }else{
+      setBasic(basic=> 199.99);
+      setProfessional(professional=> 249.99);
+      setMaster(master=> 399.99);
+    }
+  }
+
   return (
     <>
       <Head>
@@ -17,40 +38,46 @@ export default function Home() {
       <main id={styles.main}>
         <div className={styles.wrapper}>
           <h1>Our pricing</h1>
-          <div className="switches-container">
+          <div className={styles["switches-container"]}>
             <p>Annually</p>
+            <label className={styles.switch} htmlFor="switch">
+              <input onChange={
+                  () => checkAnnually()                 
+              } value={monthly} type="checkbox" id="switch" />
+              <span className={styles.slider}></span>
+            </label>
             <p>Monthly</p>
           </div>
           <div className={styles["prices-container"]}>
             <div className={styles.card}>
               <h1>Basic</h1>
-              <h2>$19.99</h2>
+              <h2>${basic}</h2>
               <div className={styles.description}>
                 <p>500 GB Storage</p>
                 <p>2 Users Allowed</p>
                 <p>Send up to 3 GB</p>
               </div>
-              <button className="learnMore">Learn more</button>
+              <button className={styles.learnMore}>Learn more</button>
             </div>
-            <div className={styles.card}>
+            <div className={`${styles.card} ${styles.purple}`}>
               <h1>Professional</h1>
-              <h2>$24.99</h2>
+              <h2>${professional}</h2>
               <div className={styles.description}>
                 <p>1 TB Storage</p>
                 <p>5 Users Allowed</p>
                 <p>Send up to 10 GB</p>
               </div>
-              <button className="learnMore">Learn more</button>
+              <button className={styles.learnMore}>Learn more</button>
             </div>
             <div className={styles.card}>
               <h1>Master</h1>
-              <h2>$39.99</h2>
+              <h2>${master}</h2>
               <div className={styles.description}>
                 <p>2 TB Storage</p>
                 <p>10 Users Allowed</p>
                 <p>Send up to 20 GB</p>
               </div>
-              <button className="learnMore">Learn more</button>
+              <button className={styles.learnMore}>Learn more</button>
             </div>
           </div>
         </div>
