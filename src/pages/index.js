@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
       <main id={styles.main}>
         <div className={styles.wrapper}>
-          <h1>Our pricing</h1>
+          <h1>Our Pricing</h1>
           <div className={styles["switches-container"]}>
             <p>Annually</p>
             <label className={styles.switch} htmlFor="switch">
