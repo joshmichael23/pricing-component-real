@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [Vercel Site](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-pricing-component-using-nextjs-f6soQbglHv)
+- Live Site URL: [Vercel Site](https://pricing-component-real.vercel.app)
 
 ## Built with
 - CSS Grid
