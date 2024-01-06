@@ -131,20 +131,20 @@
         height:3rem;
         border-radius: .5rem;
         text-transform: uppercase;
-        color:white;
+        color:var(--VeryLightGrayishBlue);
         background-image: var(--gradient);
         cursor: pointer;
         transition: all .2s ease;
     }
 
     .card.purple > .learnMore:hover{
-        color: white;
+        color: var(--VeryLightGrayishBlue);
         background: transparent;
-        border: 1px solid white;
+        border: 1px solid var(--VeryLightGrayishBlue);
     }
     .card > .learnMore:hover{
         color:var(--gradient2);
-        background: white;
+        background: var(--VeryLightGrayishBlue);
         border: 1px solid var(--gradient2);
     }
 

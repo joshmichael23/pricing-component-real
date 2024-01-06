@@ -42,7 +42,7 @@ export default function Home() {
           <div className={styles["switches-container"]}>
             <p>Annually</p>
             <label className={styles.switch} htmlFor="switch">
-              <input checked={monthly} onChange={
+              <input aria-label="Set Monthly" checked={monthly} onChange={
                   () => checkAnnually()                 
               } type="checkbox" id="switch" />
               <span className={styles.slider}></span>
