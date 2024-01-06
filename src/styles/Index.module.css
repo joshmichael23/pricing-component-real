@@ -84,8 +84,8 @@
     
 }
     .card.purple > .learnMore{
-        background: white;
-        color: hsl(237, 63%, 64%);
+        background: var(--VeryLightGrayishBlue);
+        color: var(--gradient2);
     }
 
 .card{
