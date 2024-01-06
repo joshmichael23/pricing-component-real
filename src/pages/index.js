@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Index.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +16,7 @@ export default function Home() {
   function checkAnnually(){
     setMonthly(monthly=>!monthly);
 
-    if(monthly){
+    if(!monthly){
       setBasic(basic=> 19.99);
       setProfessional(professional=> 24.99);
       setMaster(master=> 39.99);
@@ -26,6 +26,7 @@ export default function Home() {
       setMaster(master=> 399.99);
     }
   }
+
 
   return (
     <>
@@ -41,9 +42,9 @@ export default function Home() {
           <div className={styles["switches-container"]}>
             <p>Annually</p>
             <label className={styles.switch} htmlFor="switch">
-              <input onChange={
+              <input checked={monthly} onChange={
                   () => checkAnnually()                 
-              } value={monthly} type="checkbox" id="switch" />
+              } type="checkbox" id="switch" />
               <span className={styles.slider}></span>
             </label>
             <p>Monthly</p>
